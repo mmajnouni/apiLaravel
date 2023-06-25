@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/shownews',  [ApiNewsController::class, 'shownews'] );
+Route::get('shownews',  [ApiNewsController::class, 'shownews'] );

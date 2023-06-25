@@ -8,6 +8,7 @@ use App\Models\apiNews;
 class ApiNewsController extends Controller
 {
     function getnews() {
+        //fetch data from url and store in database
         $url = http::get("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=de9b9f357e0142e38ccab662b9de16ca");
         $converted = $url->json();
 
@@ -22,6 +23,7 @@ class ApiNewsController extends Controller
     }
 
     function shownews() {
+        //show data from database
         $data = apiNews::all();
         return view('shownews', compact('data'));
     }
